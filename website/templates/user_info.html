@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+<h1 align="center">{{user.first_name}} information</h1>
+
+<table>
+  <tr>
+    <th>User Id</th>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Registration Date</th>
+    <th>Current number of notes</th>
+  </tr>
+  <tr>
+    <td>{{user.id}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.first_name}}</td>
+    <td>{{user.creation_date}}</td>
+    <td>{{user.notes|count}}</td>
+  </tr>
+</table>
+
+<!--   {% for email in user.email %} {{ email }} {% endfor %}-->
+
+<!-- user = User.query.filter_by(email=email).first() -->
+
+{% endblock %}
